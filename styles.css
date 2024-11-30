@@ -1,0 +1,163 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #f4f4f4;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #00d4ff;
+    margin: 0;
+}
+
+header .subtitle {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Section Titles */
+h2 {
+    font-size: 2rem;
+    color: #00d4ff;
+    border-bottom: 2px solid #00d4ff;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* Linux Skills Section */
+.linux-skills {
+    margin: 20px 0;
+}
+
+.linux-skills h2 {
+    font-size: 2rem;
+    color: #00d4ff;
+    border-bottom: 2px solid #00d4ff;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.linux-skills p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* About Section */
+.objective p {
+    text-align: justify;
+    margin: 20px 0;
+    font-size: 1.1rem;
+}
+
+/* Skills, Projects, and Interests */
+.skills ul, .projects ul, .interests ul {
+    list-style-type: none;
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.skills li, .projects li, .interests li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    padding: 10px;
+    background: #121212;
+    border-left: 4px solid #00d4ff;
+    border-radius: 5px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.skills li:hover, .projects li:hover, .interests li:hover {
+    transform: scale(1.02);
+    background: #1f1f1f;
+}
+
+/* Contact Section */
+.contact a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px 0;
+    background-color: #121212;
+    color: #fff;
+    border-top: 2px solid #00d4ff;
+}
+
+/* Links */
+a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .skills li, .projects li, .interests li {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* GitHub Stats Section */
+.github-stats {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.github-stats h2 {
+    font-size: 2rem;
+    color: #00d4ff;
+    border-bottom: 2px solid #00d4ff;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.github-stats img {
+    max-width: 100%;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
