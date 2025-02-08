@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Sanjivram Balasubramanian—a young software developer showcasing skills, projects, education, certificates and more." />
+  <meta name="author" content="Sanjivram Balasubramanian" />
+  <title>Sanjivram Portfolio</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <!-- Inlined CSS -->
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #111;
+      color: #eee;
+      line-height: 1.6;
+    }
+    a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    a:hover, a:focus {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    
+    /* Fixed Navigation */
+    header {
+      background: #222;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: #00d4ff;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+    }
+    header nav ul li {
+      margin-left: 20px;
+    }
+    header nav ul li:first-child {
+      margin-left: 0;
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      /* Removed placeholder background image; using a solid background color */
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 80px; /* Account for fixed header */
+      position: relative;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .hero-content .btn {
+      padding: 10px 20px;
+      background: #00d4ff;
+      color: #fff;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .hero-content .btn:hover {
+      background: #007cae;
+    }
+    
+    /* Section Titles */
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-title h2 {
+      font-size: 2.5rem;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #00d4ff;
+      margin: 10px auto 0;
+    }
+    
+    /* Sections Padding */
+    section {
+      padding: 80px 0;
+    }
+    
+    /* About Section */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    /* The about image has been removed */
+    
+    /* Resume Section */
+    .resume-section {
+      text-align: center;
+    }
+    .resume-section .btn {
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      background: #00d4ff;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 8px rgba(0,212,255,0.4);
+    }
+    .resume-section .btn:hover {
+      background: #007cae;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,212,255,0.5);
+    }
+    
+    /* Objective Section */
+    .objective p {
+      text-align: center;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    
+    /* Skills Section */
+    .skills-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .skills-list li {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .skills-list li:hover {
+      transform: translateY(-5px);
+    }
+    .skills-list li h3 {
+      margin-bottom: 10px;
+    }
+    .skills-list li ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+    
+    /* Linux Skills Section */
+    .linux-skills p {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+    
+    /* Projects Section */
+    .projects-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .projects-list li {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .projects-list li:hover {
+      transform: translateY(-5px);
+    }
+    .projects-list li h3 {
+      margin-bottom: 10px;
+    }
+    .projects-list li p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    
+    /* Education Section */
+    .education p {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    
+    /* Certificates Section */
+    .certificates-list {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: auto;
+    }
+    .certificates-list li {
+      margin: 10px 0;
+      text-align: center;
+    }
+    
+    /* Contact Section */
+    .contact-content {
+      text-align: center;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: #222;
+      text-align: center;
+      padding: 20px 0;
+    }
+    
+    /* Back-to-Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00d4ff;
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      display: none;
+      z-index: 1000;
+      transition: opacity 0.3s;
+    }
+    .back-to-top:hover {
+      opacity: 0.8;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      header .container {
+        flex-direction: column;
+      }
+      header nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+      }
+      header nav ul li {
+        margin: 10px 0;
+      }
+      .about-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>Sanjivram</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#objective">Objective</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#linux">Linux Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content container">
+      <h1>Hello, I'm Sanjivram</h1>
+      <p>A young software developer passionate about creativity and technology.</p>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>I'm Sanjivram Balasubramanian—a young, enthusiastic software developer with a love for crafting modern web experiences and experimenting with new technologies. I enjoy creating responsive websites, developing interactive games, and exploring creative coding projects.</p>
+          <p>With skills in HTML, CSS, JavaScript, Python, and more, I strive to build projects that are not only functional but also engaging. I work comfortably in Linux environments, using Debian and Arch Linux to optimize my workflow.</p>
+        </div>
+        <!-- Placeholder about image has been removed -->
+      </div>
+    </div>
+  </section>
+  
+  <!-- Resume Section -->
+  <section id="resume">
+    <div class="container resume-section">
+      <div class="section-title">
+        <h2>My Resume</h2>
+      </div>
+      <a href="Resume.pdf" class="btn" target="_blank" rel="noopener noreferrer" aria-label="View My Resume">View My Resume</a>
+    </div>
+  </section>
+  
+  <!-- Objective Section -->
+  <section id="objective">
+    <div class="container objective">
+      <div class="section-title">
+        <h2>Objective</h2>
+      </div>
+      <p>A passionate nine-year-old coder eager to expand my programming skills and contribute to creative projects. Seeking opportunities to learn and collaborate with others who share a love for technology.</p>
+    </div>
+  </section>
+  
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-title">
+        <h2>Skills</h2>
+      </div>
+      <ul class="skills-list">
+        <li>
+          <h3>Programming Languages</h3>
+          <ul>
+            <li>HTML &amp; CSS: Proficient in building and styling web pages.</li>
+            <li>JavaScript: Experience in creating interactive web features.</li>
+            <li>Python: Knowledgeable in scripting and simple game development.</li>
+            <li>Java: Understanding of object-oriented programming concepts.</li>
+            <li>Node.js: Basic skills in server-side programming.</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Web Development</h3>
+          <ul>
+            <li>Developing responsive and user-friendly websites.</li>
+            <li>Implementing animations and interactive elements.</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Tools &amp; Technologies</h3>
+          <ul>
+            <li>Familiar with code editors like VSCode and Sublime Text.</li>
+            <li>Basic understanding of Git and version control.</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Additional Skills</h3>
+          <ul>
+            <li>Programming Languages: Python, C++, Lua, Java</li>
+            <li>Frameworks &amp; Libraries: Flask, FastAPI, Tkinter, Pygame, React, Vue.js, Angular</li>
+            <li>Data Libraries: NumPy, pandas, Matplotlib, Seaborn</li>
+            <li>Machine Learning: TensorFlow, Keras</li>
+            <li>Databases: MySQL, PostgreSQL, MongoDB, Firebase</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Linux Skills Section -->
+  <section id="linux">
+    <div class="container">
+      <div class="section-title">
+        <h2>Linux Skills</h2>
+      </div>
+      <div class="linux-skills">
+        <p>Proficient in using Debian-based operating systems and their terminals for efficient navigation and operations. Skilled in installing and working with Arch Linux, showcasing my ability to handle advanced distributions and command-line interfaces.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Projects</h2>
+      </div>
+      <ul class="projects-list">
+        <li>
+          <h3>Personal Portfolio Website</h3>
+          <p>Created a website to showcase my projects using HTML, CSS, and JavaScript. Implemented responsive design techniques for optimal viewing on all devices.</p>
+          <a href="https://github.com/y8tireu" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
+        </li>
+        <li>
+          <h3>HTML, CSS, and JS Games</h3>
+          <p>Interactive games like Fruit Ninja and Level Devil Remastered 2 developed using modern web techniques.</p>
+          <a href="https://y8tireu.github.io/Fruit-Ninja" target="_blank" rel="noopener noreferrer"><i class="fas fa-gamepad"></i> Fruit Ninja</a><br>
+          <a href="https://y8tireu.github.io/Level-Devil-Remastered-2/" target="_blank" rel="noopener noreferrer"><i class="fas fa-gamepad"></i> Level Devil Remastered 2</a>
+        </li>
+        <li>
+          <h3>Python Games and Apps</h3>
+          <p>Built simple games and apps like a 2 Player Fighting Game and a Calendar in Python. Enhanced problem-solving skills and logic building.</p>
+          <a href="https://github.com/y8tireu/My-Python-Projects-2.0" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Explore More</a>
+        </li>
+        <li>
+          <h3>Search Engine</h3>
+          <p>An innovative search engine project that utilizes modern web technologies.</p>
+          <a href="https://github.com/y8tireu/Sanjivram-Search-Engine" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
+        </li>
+        <li>
+          <h3>GameHub</h3>
+          <p>A gaming platform hosting a variety of games with customization and offline capabilities.</p>
+          <a href="https://sanjivramgamehub.netlify.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-gamepad"></i> Visit GameHub</a>
+        </li>
+        <li>
+          <h3>CraftMine</h3>
+          <p>An exciting project inspired by popular sandbox games, built using modern programming techniques.</p>
+          <a href="https://github.com/y8tireu/CraftMine" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
+        </li>
+        <li>
+          <h3>Tag Game</h3>
+          <p>A fun, interactive tag game available in multiple versions.</p>
+          <a href="https://y8tireu.github.io/Tag" target="_blank" rel="noopener noreferrer"><i class="fas fa-gamepad"></i> Tag Game</a><br>
+          <a href="https://y8tireu.github.io/Tag2/" target="_blank" rel="noopener noreferrer"><i class="fas fa-gamepad"></i> Tag Game Version 2</a>
+        </li>
+        <li>
+          <h3>Sanjivram Search Engine 2</h3>
+          <p>A modern search engine project with updated technologies.</p>
+          <a href="https://y8tireu.github.io/Sanjivram-Search-Engine2/" target="_blank" rel="noopener noreferrer"><i class="fas fa-search"></i> Visit Search Engine</a>
+        </li>
+        <li>
+          <h3>Python and Shell Scan Tool</h3>
+          <p>A scanning tool built using Python and shell scripting.</p>
+          <a href="https://github.com/y8tireu/Python-And-Shell-Scan-Tool" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
+        </li>
+        <li>
+          <h3>PDF Merger</h3>
+          <p>A tool for merging multiple PDF files using shell scripting.</p>
+          <a href="https://github.com/y8tireu/pdf_merger_shell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
+        </li>
+        <li>
+          <h3>Sanjivram-AI</h3>
+          <p>An open-source AI chat framework supporting multiple AI providers.</p>
+        </li>
+        <li>
+          <h3>GameHub2</h3>
+          <p>A gaming website hosting over 500 games with customization and offline mode.</p>
+        </li>
+        <li>
+          <h3>App-Installer</h3>
+          <p>A versatile script for installing applications on major Linux distributions.</p>
+        </li>
+        <li>
+          <h3>DreamHouse</h3>
+          <p>A creative narrative project exploring a mystical house and self-discovery.</p>
+        </li>
+        <li>
+          <h3>GitHub File Access App</h3>
+          <p>A web application to browse files in public GitHub repositories.</p>
+        </li>
+        <li>
+          <h3>GameHub3</h3>
+          <p>An ad-free, private, unblocked gaming site with regular updates.</p>
+        </li>
+        <li>
+          <h3>GameHub4</h3>
+          <p>Aggregates unblocked games from various sources for centralized access.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Education Section -->
+  <section id="education">
+    <div class="container">
+      <div class="section-title">
+        <h2>Education</h2>
+      </div>
+      <div class="education">
+        <p><strong>Fuller Elementary School</strong><br>4th Grade</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Certificates Section -->
+  <section id="certificates">
+    <div class="container">
+      <div class="section-title">
+        <h2>Certificates</h2>
+      </div>
+      <ul class="certificates-list">
+        <li>
+          <a href="https://coursera.org/share/93d44d6cddf9f67407f2216d9254c718" target="_blank" rel="noopener noreferrer">
+            Meta Backend Programming in Python
+          </a>
+        </li>
+        <li>
+          <a href="https://www.freecodecamp.org/certification/y8tireu/data-analysis-with-python-v7" target="_blank" rel="noopener noreferrer">
+            Data Analysis with Python
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-content">
+        <p>If you’d like to collaborate or have any questions, feel free to reach out!</p>
+        <p>Email: <a href="mailto:y8tireu2@gmail.com">y8tireu2@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/y8tireu" target="_blank" rel="noopener noreferrer">github.com/y8tireu</a></p>
+        <p>YouTube: <a href="https://youtube.com/@y8tireu" target="_blank" rel="noopener noreferrer">youtube.com/@y8tireu</a></p>
+        <p>GD Games: <a href="https://gd.games/y8tireu" target="_blank" rel="noopener noreferrer">gd.games/y8tireu</a></p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Sanjivram Balasubramanian. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Back-to-Top Button -->
+  <a href="#hero" class="back-to-top" aria-label="Back to Top"><i class="fas fa-chevron-up"></i></a>
+  
+  <!-- Inlined JavaScript -->
+  <script>
+    // Show or hide the back-to-top button based on scroll
+    window.addEventListener('scroll', function() {
+      const btn = document.querySelector('.back-to-top');
+      if (window.pageYOffset > 300) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+    
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 60, // adjust for fixed header
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

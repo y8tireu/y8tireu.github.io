@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Sanjivram Balasubramanian, a passionate young software developer showcasing projects, skills, and Linux expertise." />
+  <meta name="author" content="Sanjivram Balasubramanian" />
+  <title>Sanjivram Balasubramanian</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
+  <!-- Inlined CSS -->
+  <style>
+    /* CSS Variables for theming */
+    :root {
+      --bg-color: #0d0d0d;
+      --text-color: #f4f4f4;
+      --accent-color: #00d4ff;
+      --secondary-color: #bbb;
+      --card-bg: #121212;
+      --hover-bg: #1f1f1f;
+      --header-gradient: linear-gradient(135deg, #00d4ff, #007cae);
+    }
+    
+    /* Global Styles */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      color: var(--text-color);
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+    }
+    
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+    
+    /* Skip Link for Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: var(--bg-color);
+      padding: 8px 16px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+    }
+    
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px 0;
+      background: var(--header-gradient);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 212, 255, 0.3);
+    }
+    
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--bg-color);
+      margin: 0;
+    }
+    
+    header .subtitle {
+      font-size: 1.2rem;
+      color: var(--bg-color);
+      margin-top: 5px;
+      font-style: italic;
+    }
+    
+    /* Section Headings */
+    h2 {
+      font-size: 2rem;
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+    }
+    
+    /* Sections */
+    section {
+      margin: 30px 0;
+      padding: 15px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      /* Initial state for fade-in animation */
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    section p {
+      font-size: 1.1rem;
+      text-align: justify;
+      margin: 15px 0;
+    }
+    
+    /* Fade-in Animation */
+    .fade-in {
+      animation: fadeInUp 0.8s forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Lists for Skills, Projects, etc. */
+    ul {
+      list-style: none;
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+    
+    li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+      padding: 10px;
+      background: var(--card-bg);
+      border-left: 4px solid var(--accent-color);
+      border-radius: 5px;
+      transition: transform 0.2s, background 0.3s;
+    }
+    
+    li:hover,
+    li:focus-within {
+      transform: scale(1.02);
+      background: var(--hover-bg);
+    }
+    
+    li ul {
+      margin-top: 10px;
+    }
+    
+    /* Resume Section: Center aligned */
+    .resume {
+      text-align: center;
+    }
+    
+    .resume h2 {
+      margin-bottom: 10px;
+    }
+    
+    /* Resume Button */
+    .resume-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      background-color: var(--accent-color);
+      border: none;
+      border-radius: 30px;
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 212, 255, 0.4);
+    }
+    
+    .resume-button:hover,
+    .resume-button:focus {
+      background-color: #007cae;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 212, 255, 0.5);
+    }
+    
+    /* Back-to-Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent-color);
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      display: none;
+      transition: opacity 0.3s;
+      z-index: 100;
+    }
+    
+    .back-to-top.show {
+      display: block;
+      opacity: 0.8;
+    }
+    
+    .back-to-top:hover {
+      opacity: 1;
+    }
+    
+    /* GitHub Stats Section */
+    .github-stats {
+      text-align: center;
+    }
+    
+    .github-stats img {
+      max-width: 100%;
+      margin: 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      h2 {
+        font-size: 1.6rem;
+      }
+      
+      li {
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background-color: var(--card-bg);
+      color: #fff;
+      border-top: 2px solid var(--accent-color);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div class="container">
+    <header role="banner">
+      <h1>Sanjivram Balasubramanian</h1>
+      <p class="subtitle">Young Software Developer</p>
+    </header>
+    
+    <main id="main-content" role="main">
+      <section class="contact">
+        <h2>Contact Information</h2>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:y8tireu2@gmail.com">
+            <i class="fas fa-envelope"></i> y8tireu2@gmail.com
+          </a>
+        </p>
+        <p>
+          <strong>YouTube:</strong>
+          <a href="https://youtube.com/@y8tireu" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube"></i> youtube.com/@y8tireu
+          </a>
+        </p>
+        <p>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/y8tireu" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> github.com/y8tireu
+          </a>
+        </p>
+        <p>
+          <strong>GD Games:</strong>
+          <a href="https://gd.games/y8tireu" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-gamepad"></i> gd.games/y8tireu
+          </a>
+        </p>
+      </section>
+      
+      <section class="resume">
+        <h2>My Resume</h2>
+        <!-- Existing Resume Button -->
+        <a href="Resume.pdf" class="resume-button" target="_blank" rel="noopener noreferrer" aria-label="View My Resume">View My Resume</a>
+        <!-- New Second Portfolio Button -->
+        <a href="index2.html" class="resume-button" aria-label="View My Second Portfolio">View My Second Portfolio</a>
+      </section>
+      
+      <section class="objective">
+        <h2>Objective</h2>
+        <p>
+          A passionate nine-year-old coder eager to expand my programming skills and contribute to creative projects. Seeking opportunities to learn and collaborate with others who share a love for technology.
+        </p>
+      </section>
+      
+      <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>
+            <strong>Programming Languages:</strong>
+            <ul>
+              <li>HTML &amp; CSS: Proficient in building and styling web pages.</li>
+              <li>JavaScript: Experience in creating interactive web features.</li>
+              <li>Python: Knowledgeable in scripting and simple game development.</li>
+              <li>Java: Understanding of object-oriented programming concepts.</li>
+              <li>Node.js: Basic skills in server-side programming.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Web Development:</strong>
+            <ul>
+              <li>Developing responsive and user-friendly websites.</li>
+              <li>Implementing animations and interactive elements.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Tools &amp; Technologies:</strong>
+            <ul>
+              <li>Familiar with code editors like VSCode and Sublime Text.</li>
+              <li>Basic understanding of Git and version control.</li>
+            </ul>
+          </li>
+          <li><strong>Programming Languages:</strong> Python, C++, Lua, Java</li>
+          <li><strong>Frameworks &amp; Libraries:</strong> Flask, FastAPI, Tkinter, Pygame, React, Vue.js, Angular</li>
+          <li><strong>Data Libraries:</strong> NumPy, pandas, Matplotlib, Seaborn</li>
+          <li><strong>Machine Learning:</strong> TensorFlow, Keras</li>
+          <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Firebase</li>
+        </ul>
+      </section>
+      
+      <section class="linux-skills">
+        <h2>Linux Skills</h2>
+        <p>
+          Proficient in using Debian-based operating systems and their terminals for efficient navigation and operations. Skilled in installing and working with Arch Linux, showcasing my ability to handle advanced distributions and command-line interfaces.
+        </p>
+      </section>
+      
+      <section class="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <strong>Personal Portfolio Website:</strong> Created a website to showcase my projects using HTML, CSS, and JavaScript. Implemented responsive design techniques for optimal viewing on all devices.
+          </li>
+          <li>
+            <strong>HTML, CSS, and JS Games:</strong>
+            <ul>
+              <li><a href="https://y8tireu.github.io/Fruit-Ninja" target="_blank" rel="noopener noreferrer">Fruit Ninja</a></li>
+              <li><a href="https://y8tireu.github.io/Level-Devil-Remastered-2/" target="_blank" rel="noopener noreferrer">Level Devil Remastered 2</a></li>
+            </ul>
+          </li>
+          <li>
+            <strong>Python Games and Apps:</strong> Built simple games and apps like a 2 Player Fighting Game and a Calendar in Python. Enhanced problem-solving skills and logic building.
+          </li>
+          <li>
+            <strong>Search Engine:</strong> <a href="https://github.com/y8tireu/Sanjivram-Search-Engine/" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          </li>
+          <li>
+            <strong>GameHub:</strong> <a href="https://sanjivramgamehub.netlify.app/" target="_blank" rel="noopener noreferrer">Visit GameHub</a>
+          </li>
+          <li>
+            <strong>My Python Projects:</strong> <a href="https://github.com/y8tireu/My-Python-Projects-2.0" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          </li>
+          <li>
+            <strong>CraftMine:</strong> <a href="https://github.com/y8tireu/CraftMine/" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          </li>
+          <li>
+            <strong>Tag Game:</strong>
+            <a href="https://y8tireu.github.io/Tag/" target="_blank" rel="noopener noreferrer">Tag Game</a>,
+            <a href="https://y8tireu.github.io/Tag2/" target="_blank" rel="noopener noreferrer">Tag Game Version 2</a>
+          </li>
+          <li>
+            <strong>Sanjivram Search Engine 2:</strong> <a href="https://y8tireu.github.io/Sanjivram-Search-Engine2/" target="_blank" rel="noopener noreferrer">Visit Search Engine</a>
+          </li>
+          <li>
+            <strong>Python and Shell Scan Tool:</strong> <a href="https://github.com/y8tireu/Python-And-Shell-Scan-Tool" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          </li>
+          <li>
+            <strong>PDF Merger:</strong> <a href="https://github.com/y8tireu/pdf_merger_shell" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          </li>
+          <li>
+            <strong>Sanjivram-AI:</strong> An open-source AI chat framework supporting multiple AI providers.
+          </li>
+          <li>
+            <strong>GameHub2:</strong> A gaming website hosting over 500 games with customization and offline mode.
+          </li>
+          <li>
+            <strong>App-Installer:</strong> A versatile script for installing applications on major Linux distributions.
+          </li>
+          <li>
+            <strong>DreamHouse:</strong> A creative narrative project exploring a mystical house and self-discovery.
+          </li>
+          <li>
+            <strong>GitHub File Access App:</strong> A web application to browse files in public GitHub repositories.
+          </li>
+          <li>
+            <strong>GameHub3:</strong> An ad-free, private, unblocked gaming site with regular updates.
+          </li>
+          <li>
+            <strong>GameHub4:</strong> Aggregates unblocked games from various sources for centralized access.
+          </li>
+        </ul>
+      </section>
+      
+      <section class="education">
+        <h2>Education</h2>
+        <p><strong>Fuller Elementary School</strong><br>4th Grade</p>
+      </section>
+      
+      <section class="certificates">
+        <h2>Certificates</h2>
+        <ul>
+          <li>
+            <a href="https://coursera.org/share/93d44d6cddf9f67407f2216d9254c718" target="_blank" rel="noopener noreferrer">
+              Meta Backend Programming in Python
+            </a>
+          </li>
+          <li>
+            <a href="https://www.freecodecamp.org/certification/y8tireu/data-analysis-with-python-v7" target="_blank" rel="noopener noreferrer">
+              Data Analysis with Python
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    
+    <footer role="contentinfo">
+      <p>&copy; 2025 Sanjivram Balasubramanian. All rights reserved.</p>
+    </footer>
+  </div>
+  
+  <!-- Back-to-Top Button -->
+  <a href="#main-content" class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></a>
+  
+  <!-- Inlined JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Use Intersection Observer for fade-in animations
+      const sections = document.querySelectorAll('section');
+      const observerOptions = { threshold: 0.1 };
+      
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+      
+      // Back-to-top button functionality
+      const backToTop = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      });
+      
+      // Console game: Guess the Number
+      window.startConsoleGame = function() {
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+        console.clear();
+        console.log("Welcome to 'Guess the Number'!");
+        console.log("I'm thinking of a number between 1 and 100.");
+        console.log("Type your guess in the prompt. Type 'exit' to quit.");
+      
+        while (true) {
+          let input = prompt("Enter your guess (or type 'exit' to quit):");
+          if (input === null || input.toLowerCase() === 'exit') {
+            console.log("Game exited. The number was " + randomNumber + ".");
+            break;
+          }
+          const guess = parseInt(input, 10);
+          if (isNaN(guess)) {
+            console.log("That's not a valid number. Please try again.");
+            continue;
+          }
+          attempts++;
+          if (guess === randomNumber) {
+            console.log("Congratulations! You guessed the number in " + attempts + " attempts.");
+            break;
+          } else if (guess < randomNumber) {
+            console.log("Too low! Try again.");
+          } else {
+            console.log("Too high! Try again.");
+          }
+        }
+      };
+      
+      console.log("Website loaded successfully.");
+      console.log("To play a console game, type startConsoleGame() in the console.");
+    });
+  </script>
+</body>
+</html>
+
